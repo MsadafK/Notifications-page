@@ -1,5 +1,8 @@
 const notifications = document.querySelectorAll(".main__notification-div");
 const markAllReadBtn = document.querySelector(".header__mark-all-as-read");
+const notificationCount = document.querySelector(
+  ".header__number-of-notifications"
+);
 
 // Function to check and handle the "Mark all as read" functionality
 function checkNotification() {
@@ -16,6 +19,10 @@ function checkNotification() {
 
       // Remove the 'active' class (as the notification has been "read")
       item.classList.remove("active");
+
+      // Decrease the notification count by 1
+      let currentCount = parseInt(notificationCount.textContent);
+      notificationCount.textContent = currentCount - 1;
     }
   });
 }
@@ -39,6 +46,10 @@ notifications.forEach((item) => {
 
       // Remove the 'active' class from this specific container
       item.classList.remove("active");
+
+      // Decrease the notification count by 1
+      let currentCount = parseInt(notificationCount.textContent);
+      notificationCount.textContent = currentCount - 1;
     });
   }
 });
