@@ -1,0 +1,236 @@
+/* VARIABLES */
+:root {
+  --red: hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-1: hsl(211, 68%, 94%);
+  --light-grayish-blue-2: hsl(205, 33%, 90%);
+  --grayish-blue: hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE STYLES */
+body {
+  overflow-x: hidden;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+.main__notification-div {
+  cursor: pointer;
+}
+
+/* FONTS */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/static/PlusJakartaSans-Medium.ttf")
+      format("truetype"),
+    url("./assets/fonts/static/PlusJakartaSans-ExtraBold.ttf")
+      format("truetype");
+}
+
+/* HEADER STYLES */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.75rem;
+}
+
+.header__notifications-heading {
+  font-size: 1rem;
+  color: var(--very-dark-blue);
+}
+
+.header__number-of-notifications {
+  font-size: 0.9rem;
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}
+
+.header__mark-all-as-read {
+  font-size: 0.8rem;
+}
+
+/* MAIN STYLES */
+.main {
+  margin: 2rem 0;
+}
+
+.main__notification-div {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--very-light-grayish-blue);
+}
+
+.main__notification-div__image {
+  width: 13%;
+}
+
+.main__notification-div__text-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  font-size: 0.8rem;
+  color: var(--dark-grayish-blue);
+}
+
+.main__notification-div__text-div__name,
+.main__notification-div__text-div__reacted-to-post {
+  color: var(--very-dark-blue);
+  font-weight: 600;
+}
+
+.main__notification-div__text-div__name {
+  margin-right: 0.25rem;
+}
+
+.main__notification-div__text-div__reacted-to-post {
+  color: var(--dark-grayish-blue);
+  margin-left: 0.25rem;
+}
+
+.main__reacted-div-text__time {
+  color: var(--grayish-blue);
+  font-weight: 400;
+}
+
+.group-link {
+  color: var(--blue);
+}
+
+.main__notification-message-div {
+  background-color: var(--white);
+}
+
+.main__notification-div__text-div__message {
+  padding: 1rem;
+  border: 1px solid var(--light-grayish-blue-1);
+  line-height: 1.5;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.main__notification-div__text-div__message:hover {
+  background-color: var(--light-grayish-blue-2);
+}
+
+.main__notification-div__text-div__image {
+  width: 15%;
+}
+
+.main__notification-commented-div {
+  background-color: var(--white);
+  position: relative;
+}
+
+.main__notification-reacted-seen-div {
+  background-color: var(--white);
+}
+
+.last-group-link {
+  margin: 0;
+}
+
+.main__notification-leave-div {
+  background-color: var(--white);
+}
+
+.main__notification-div__image-div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.notification-indicator {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--red);
+}
+
+/* MEDIA QUERIES */
+/* 375px and more */
+@media (min-width: 375px) {
+  * {
+    font-size: 15.5px;
+  }
+
+  .header__notifications-heading {
+    font-size: 1.25rem;
+  }
+
+  .header__mark-all-as-read {
+    font-size: 1rem;
+  }
+
+  .header,
+  .main {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+
+  .main {
+    margin: 3rem auto;
+  }
+}
+
+/* 768px and more */
+@media (min-width: 768px) {
+  .header,
+  .main {
+    max-width: 646px;
+    margin: 0 auto;
+  }
+
+  .main {
+    margin: 2.25rem auto;
+  }
+
+  .main__notification-div__image,
+  .main__notification-div__text-div__image {
+    width: 7%;
+  }
+
+  .main__notification-commented-div {
+    display: flex;
+  }
+
+  .notification-container {
+    display: flex;
+    gap: 1rem;
+  }
+}
